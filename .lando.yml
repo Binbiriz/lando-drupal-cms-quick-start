@@ -1,4 +1,4 @@
-name: dev-drupalcore
+name: dev-drupalcms
 recipe: drupal11
 config:
   database: mariadb:10.11.8
