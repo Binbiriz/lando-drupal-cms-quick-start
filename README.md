@@ -1,4 +1,4 @@
-# Quick Start for Drupal 11 and Lando
+# Quick Start for Drupal CMS and Lando
 
 **Requirements:** [Lando](https://lando.dev/).
 
@@ -18,12 +18,12 @@ lando start
 
 After starting Lando, you will see the URLs. Please do not visit them at this moment.
 
-![Lando Start URLs](https://i.imgur.com/X7ioisD.png)
+![Lando Start URLs](https://i.imgur.com/hOwdA1e.png)
 
 Continue running the command below:
 
 ```bash
-lando composer create-project drupal/recommended-project /app/temp --no-install
+lando composer create drupal/cms /app/temp --no-install
 
 rsync -rtv --remove-source-files ./temp/ ./drupal/
 
@@ -34,85 +34,16 @@ rm ./drupal/web/.gitkeep
 lando composer install # do not forget to confirm plugins when prompted
 ```
 
-Install drush
-
-```bash
-lando composer require "drush/drush"
-
-# Test drush
-lando drush --version
-```
-
 ## Install Site
 
 ### Manual Installation via Browser
 
 You can now visit the URLs mentioned above and perform an installation via browser:
 
-![Manual Drupal Installation](https://i.imgur.com/jxMDLac.png)
-
-### Automated Installation via drush
-
-#### Standard Drupal Installation
-
-This will perform a standard Drupal installation:
-
-```bash
-# Ref: https://drushcommands.com/drush-9x/site/site:install/
-# drush si --db-url=mysql://root:pass@localhost:port/dbname
-lando drush site-install \
-  standard \
-  --site-name='Drupal using Lando' \
-  --locale=en \
-  --db-url=mysql://drupal11:drupal11@database:3306/drupal11 \
-  --account-name=admin \
-  --account-pass=admin \
-  --yes
-```
-
-![Standard Drupal Installation Home Page](https://i.imgur.com/7Kyh31D.png)
-
-#### Standard Drupal Installation in Another Language
-
-If you want to perform a standard Drupal installation with a different language, change the `locale` option (in this example `tr` (Turkish) is used):
-
-```bash
-# Ref: https://drushcommands.com/drush-9x/site/site:install/
-# drush si --db-url=mysql://root:pass@localhost:port/dbname
-lando drush site-install \
-  standard \
-  --site-name='Drupal using Lando' \
-  --locale=tr \
-  --db-url=mysql://drupal11:drupal11@database:3306/drupal11 \
-  --account-name=admin \
-  --account-pass=admin \
-  --yes
-```
-
-![Standard Drupal Installation in Another Language Home Page](https://i.imgur.com/wG8D0CD.png)
-
-#### Install Umami Demo Profile
-
-This is a multi-lingual Drupal demo containing realistic content:
-
-```bash
-# Ref: https://drushcommands.com/drush-9x/site/site:install/
-# drush si --db-url=mysql://root:pass@localhost:port/dbname
-lando drush site-install \
-  demo_umami \
-  --site-name='Umami Food Magazine' \
-  --db-url=mysql://drupal11:drupal11@database:3306/drupal11 \
-  --account-name=admin \
-  --account-pass=admin \
-  --yes
-```
-
-![Drupal Umami Food Magazine Demo Home Page](https://i.imgur.com/dI648Dz.jpeg)
+[Manual Drupal CMS Installation video](https://www.awesomescreenshot.com/video/38434797?key=4ca919163118c0ce5befa1636a971d58)
 
 ## Admin Interface
 
-Visit [https://dev-drupalcore.lndo.site/user/login](https://dev-drupalcore.lndo.site/user/login).
+Visit [https://dev-drupalcms.lndo.site/user/login](https://dev-drupalcms.lndo.site/user/login).
 
-If 'Automated Installation via drush' is used for installation, use `admin` for both username and password.
-
-![Drupal Login Page](https://i.imgur.com/PT9DdIx.png)
+![Drupal Login Page](https://i.imgur.com/1AR4mnt.png)
