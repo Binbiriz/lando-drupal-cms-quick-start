@@ -2,6 +2,8 @@
 
 **Requirements:** [Lando](https://lando.dev/).
 
+_See [lando-drupal-core-quick-start](https://github.com/Binbiriz/lando-drupal-core-quick-start) repository for Drupal Core Quick Start._
+
 All of the bash commands in this document must be run in repo root.
 
 After cloning the repo, you're free to delete the `.git` directory.
