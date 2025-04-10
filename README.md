@@ -25,7 +25,7 @@ After starting Lando, you will see the URLs. Please do not visit them at this mo
 Continue running the command below:
 
 ```bash
-lando composer create drupal/cms /app/temp --no-install
+lando composer create-project drupal/cms /app/temp --no-install
 
 rsync -rtv --remove-source-files ./temp/ ./drupal/
 
